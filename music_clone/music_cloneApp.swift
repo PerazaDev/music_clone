@@ -11,7 +11,7 @@ import SwiftUI
 struct music_cloneApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RouterView()
         }
     }
 }
