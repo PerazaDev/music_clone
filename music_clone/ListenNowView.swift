@@ -9,7 +9,19 @@ import SwiftUI
 
 struct ListenNowView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView{
+            ScrollView{
+                VStack{
+                    Text("Hello, ListenNowView!")
+                    Image(systemName: "person.fill")
+                }
+                .frame(width: screenWidth)
+                
+            }
+                .navigationTitle("Listen Now")
+            
+        }
+        
     }
 }
 

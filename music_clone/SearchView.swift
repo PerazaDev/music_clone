@@ -8,8 +8,21 @@
 import SwiftUI
 
 struct SearchView: View {
+    @State var searchText = ""
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView{
+            ScrollView{
+                VStack{
+                    Text("Hello, SearchView!")
+                    Image(systemName: "person.fill")
+                }
+                .frame(width: screenWidth)
+                
+            }
+                .navigationTitle("Library")
+            
+        }
+        .searchable(text: $searchText,placement: .navigationBarDrawer(displayMode: .always), prompt: "Artist, Songs, Lyrics, and More")
     }
 }
 

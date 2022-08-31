@@ -16,6 +16,7 @@
 		2831EEAE28BEDEBE009A16FB /* RadioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2831EEAD28BEDEBE009A16FB /* RadioView.swift */; };
 		2831EEB028BEDECD009A16FB /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2831EEAF28BEDECD009A16FB /* LibraryView.swift */; };
 		2831EEB228BEDEDA009A16FB /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2831EEB128BEDEDA009A16FB /* SearchView.swift */; };
+		28CFC2E828BEEC3000BE6044 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CFC2E728BEEC3000BE6044 /* Common.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		2831EEAD28BEDEBE009A16FB /* RadioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioView.swift; sourceTree = "<group>"; };
 		2831EEAF28BEDECD009A16FB /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
 		2831EEB128BEDEDA009A16FB /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		28CFC2E728BEEC3000BE6044 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,11 +67,12 @@
 				2831EE9D28BEBADF009A16FB /* RouterView.swift */,
 				2831EEA928BEDE7E009A16FB /* BrowseView.swift */,
 				2831EEAB28BEDEA0009A16FB /* ListenNowView.swift */,
-				2831EE9F28BEBAE2009A16FB /* Assets.xcassets */,
-				2831EEA128BEBAE2009A16FB /* Preview Content */,
 				2831EEAD28BEDEBE009A16FB /* RadioView.swift */,
 				2831EEAF28BEDECD009A16FB /* LibraryView.swift */,
 				2831EEB128BEDEDA009A16FB /* SearchView.swift */,
+				2831EE9F28BEBAE2009A16FB /* Assets.xcassets */,
+				2831EEA128BEBAE2009A16FB /* Preview Content */,
+				28CFC2E728BEEC3000BE6044 /* Common.swift */,
 			);
 			path = music_clone;
 			sourceTree = "<group>";
@@ -152,6 +155,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28CFC2E828BEEC3000BE6044 /* Common.swift in Sources */,
 				2831EEAC28BEDEA0009A16FB /* ListenNowView.swift in Sources */,
 				2831EE9E28BEBADF009A16FB /* RouterView.swift in Sources */,
 				2831EEAA28BEDE7E009A16FB /* BrowseView.swift in Sources */,

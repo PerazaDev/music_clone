@@ -9,7 +9,18 @@ import SwiftUI
 
 struct LibraryView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView{
+            ScrollView{
+                VStack{
+                    Text("Hello, LibraryView!")
+                    Image(systemName: "person.fill")
+                }
+                .frame(width: screenWidth)
+                
+            }
+                .navigationTitle("Library")
+            
+        }
     }
 }
 
