@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		280D141E28FB37F8007A3635 /* MusicModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280D141D28FB37F8007A3635 /* MusicModel.swift */; };
+		280D142828FB4377007A3635 /* enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280D142728FB4376007A3635 /* enum.swift */; };
+		280D142A28FB4A69007A3635 /* LabelStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280D142928FB4A69007A3635 /* LabelStyle.swift */; };
 		2831EE9C28BEBADF009A16FB /* music_cloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2831EE9B28BEBADF009A16FB /* music_cloneApp.swift */; };
 		2831EE9E28BEBADF009A16FB /* RouterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2831EE9D28BEBADF009A16FB /* RouterView.swift */; };
 		2831EEA028BEBAE2009A16FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2831EE9F28BEBAE2009A16FB /* Assets.xcassets */; };
@@ -25,6 +27,8 @@
 
 /* Begin PBXFileReference section */
 		280D141D28FB37F8007A3635 /* MusicModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicModel.swift; sourceTree = "<group>"; };
+		280D142728FB4376007A3635 /* enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = enum.swift; sourceTree = "<group>"; };
+		280D142928FB4A69007A3635 /* LabelStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelStyle.swift; sourceTree = "<group>"; };
 		2831EE9828BEBADF009A16FB /* music_clone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = music_clone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2831EE9B28BEBADF009A16FB /* music_cloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = music_cloneApp.swift; sourceTree = "<group>"; };
 		2831EE9D28BEBADF009A16FB /* RouterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterView.swift; sourceTree = "<group>"; };
@@ -157,9 +161,9 @@
 			isa = PBXGroup;
 			children = (
 				280D142628FB3892007A3635 /* App */,
+				286453CE28C03E7700F64F4A /* Common */,
 				280D141F28FB381A007A3635 /* Presentation */,
 				280D141B28FB37D6007A3635 /* Domain */,
-				286453CE28C03E7700F64F4A /* Common */,
 				2831EE9F28BEBAE2009A16FB /* Assets.xcassets */,
 				2831EEA128BEBAE2009A16FB /* Preview Content */,
 			);
@@ -181,6 +185,8 @@
 				286453CA28C03E6000F64F4A /* Card.swift */,
 				286453CC28C03E7200F64F4A /* CardPortrait.swift */,
 				286453CF28C0408900F64F4A /* CardCover.swift */,
+				280D142728FB4376007A3635 /* enum.swift */,
+				280D142928FB4A69007A3635 /* LabelStyle.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -257,11 +263,13 @@
 			files = (
 				28CFC2E828BEEC3000BE6044 /* Common.swift in Sources */,
 				286453CB28C03E6000F64F4A /* Card.swift in Sources */,
+				280D142A28FB4A69007A3635 /* LabelStyle.swift in Sources */,
 				2831EEAC28BEDEA0009A16FB /* ListenNowView.swift in Sources */,
 				2831EE9E28BEBADF009A16FB /* RouterView.swift in Sources */,
 				286453D028C0408900F64F4A /* CardCover.swift in Sources */,
 				280D141E28FB37F8007A3635 /* MusicModel.swift in Sources */,
 				2831EEAA28BEDE7E009A16FB /* BrowseView.swift in Sources */,
+				280D142828FB4377007A3635 /* enum.swift in Sources */,
 				2831EEB228BEDEDA009A16FB /* SearchView.swift in Sources */,
 				286453CD28C03E7200F64F4A /* CardPortrait.swift in Sources */,
 				2831EE9C28BEBADF009A16FB /* music_cloneApp.swift in Sources */,

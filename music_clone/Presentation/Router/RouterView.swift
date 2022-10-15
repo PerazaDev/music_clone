@@ -10,62 +10,37 @@ import SwiftUI
 struct RouterView: View {
 
     @State var heightView = 0
+    @State var tabView: TypeTabView = .listenNowView
     var body: some View {
-        ZStack {
-            
-            TabView{
-                
-                
+        VStack {
+            switch tabView {
+            case .listenNowView:
                 ListenNowView()
-                    .tabItem {
-                        Label {
-                            Text("Listen now")
-                        } icon: {
-                            Image(systemName: "play.circle.fill")
-                        }
-                    }
+
+            case .browseView:
                 BrowseView()
-                    .tabItem {
-                        Label {
-                            Text("Browse")
-                        } icon: {
-                            Image(systemName: "square.grid.2x2.fill")
-                        }
-                    }
+
+            case .radioView:
                 RadioView()
-                    .tabItem {
-                        Label {
-                            Text("Radio")
-                        } icon: {
-                            Image(systemName: "dot.radiowaves.left.and.right")
-                        }
-                    }
+
+            case .libraryView:
                 LibraryView()
-                    .tabItem {
-                        Label {
-                            Text("Library")
-                        } icon: {
-                            Image(systemName: "music.note.tv.fill")
-                        }
-                    }
+
+            case .searchView:
                 SearchView()
-                    .tabItem {
-                        Label {
-                            Text("Search")
-                        } icon: {
-                            Image(systemName: "magnifyingglass")
-                        }
-                        
-                    }
-                
+
             }
-            VStack{
-                Spacer()
+            VStack(spacing: 0){
                 MusicBar()
-                    .frame(width: geometry.size.width, height: geometry.size.height * 0.08)
+                    .frame(maxWidth: .infinity, maxHeight: screenHeight * 0.06)
+                Divider()
+                TabViewCustom(typeView: $tabView)
+                    .frame(maxWidth: .infinity, maxHeight: screenHeight * 0.08)
+                    
             }
-            .padding(.bottom, 49)
+            .padding(.bottom, 10)
         }
+        .ignoresSafeArea(.all)
     }
         
     }
@@ -76,33 +51,90 @@ struct ContentView_Previews: PreviewProvider {
         RouterView()
     }
 }
+struct TabViewCustom: View {
+    @Binding var typeView: TypeTabView
+    var body: some View{
+        HStack(spacing: 30){
+            GenericButtonTab(typeView: $typeView,
+                             typeButton: .listenNowView,
+                             title: "Listen Now",
+                             imageSystem: "play.circle.fill")
+            .foregroundColor(typeView == .listenNowView ? .red : .gray )
+            GenericButtonTab(typeView: $typeView,
+                             typeButton: .browseView,
+                             title: "Browse",
+                             imageSystem: "square.grid.2x2.fill")
+            .foregroundColor(typeView == .browseView ? .red : .gray )
+            GenericButtonTab(typeView: $typeView,
+                             typeButton: .radioView,
+                             title: "Radio",
+                             imageSystem: "dot.radiowaves.left.and.right")
+            .foregroundColor(typeView == .radioView ? .red : .gray )
+            GenericButtonTab(typeView: $typeView,
+                             typeButton: .libraryView,
+                             title: "Library",
+                             imageSystem: "music.note.tv.fill")
+            .foregroundColor(typeView == .libraryView ? .red : .gray )
+            GenericButtonTab(typeView: $typeView,
+                             typeButton: .searchView,
+                             title: "Search",
+                             imageSystem: "magnifyingglass")
+            .foregroundColor(typeView == .searchView ? .red : .gray )
+            
+
+        }
+    }
+}
+struct GenericButtonTab: View {
+    @Binding var typeView: TypeTabView
+    var typeButton: TypeTabView
+    var title: String
+    var imageSystem: String
+    var body: some View {
+        Button { self.typeView = typeButton} label: {
+            VStack{
+                Image(systemName: imageSystem)
+                    .font(.title)
+                Text(title)
+                    .font(.caption)
+                    .fontWeight(.medium)
+            }
+        }
+    }
+}
 struct MusicBar : View {
     var body: some View {
-        
-        HStack(spacing: 0){
-            Image(systemName: "music.note.tv.fill")
-                .resizable()
-                .scaledToFit()
-                .frame(width: 45.0, height: 45.0)
-                .padding(.trailing, 10)
-                .foregroundColor(Color(UIColor{ $0.userInterfaceStyle == .dark ? UIColor.white : UIColor.black}))
+        ZStack{
+            Color(UIColor{ $0.userInterfaceStyle == .dark ? UIColor.black : UIColor.white})
+                .ignoresSafeArea(.all)
+                .opacity(0.5)
 
-            Text("Yea yea (feeat. nelly)")
-                .padding(.trailing, 20)
-                .foregroundColor(Color(UIColor{ $0.userInterfaceStyle == .dark ? UIColor.white : UIColor.black}))
-            Image(systemName: "play.fill")
-                .resizable()
-                .scaledToFit()
-                .frame(width: 20.0, height: 20.0)
-                .foregroundColor(Color(UIColor{ $0.userInterfaceStyle == .dark ? UIColor.white : UIColor.black}))
-                .padding(10)
-            Image(systemName: "forward.fill")
-                .resizable()
-                .scaledToFit()
-                .frame(width: 30.0, height: 30.0)
-                .foregroundColor(Color(UIColor{ $0.userInterfaceStyle == .dark ? UIColor.white : UIColor.black}))
-                .padding(10)
+            HStack(spacing: 0){
+                Image(systemName: "music.note.tv.fill")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 45.0, height: 45.0)
+                    .padding(.trailing, 10)
+                    .foregroundColor(Color(UIColor{ $0.userInterfaceStyle == .dark ? UIColor.white : UIColor.black}))
+
+                Text("Yea yea (feeat. nelly)")
+                    .padding(.trailing, 20)
+                    .foregroundColor(Color(UIColor{ $0.userInterfaceStyle == .dark ? UIColor.white : UIColor.black}))
+                Image(systemName: "play.fill")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 20.0, height: 20.0)
+                    .foregroundColor(Color(UIColor{ $0.userInterfaceStyle == .dark ? UIColor.white : UIColor.black}))
+                    .padding(10)
+                Image(systemName: "forward.fill")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 30.0, height: 30.0)
+                    .foregroundColor(Color(UIColor{ $0.userInterfaceStyle == .dark ? UIColor.white : UIColor.black}))
+                    .padding(10)
+            }
         }
+
     }
     
 }
