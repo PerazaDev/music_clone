@@ -12,7 +12,7 @@ struct RouterView: View {
     @State var heightView = 0
     @State var tabView: TypeTabView = .listenNowView
     var body: some View {
-        VStack {
+        ZStack {
             switch tabView {
             case .listenNowView:
                 ListenNowView()
@@ -31,12 +31,15 @@ struct RouterView: View {
 
             }
             VStack(spacing: 0){
+                Spacer()
                 MusicBar()
-                    .frame(maxWidth: .infinity, maxHeight: screenHeight * 0.06)
+                    .frame(maxWidth: .infinity, maxHeight: screenHeight * 0.07)
+                    .background(.thickMaterial)
                 Divider()
+                    .background(.thickMaterial)
                 TabViewCustom(typeView: $tabView)
                     .frame(maxWidth: .infinity, maxHeight: screenHeight * 0.08)
-                    
+                    .background(.thickMaterial)
             }
             .padding(.bottom, 10)
         }
@@ -104,37 +107,29 @@ struct GenericButtonTab: View {
 }
 struct MusicBar : View {
     var body: some View {
-        ZStack{
-            Color(UIColor{ $0.userInterfaceStyle == .dark ? UIColor.black : UIColor.white})
-                .ignoresSafeArea(.all)
-                .opacity(0.5)
-
-            HStack(spacing: 0){
-                Image(systemName: "music.note.tv.fill")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 45.0, height: 45.0)
-                    .padding(.trailing, 10)
-                    .foregroundColor(Color(UIColor{ $0.userInterfaceStyle == .dark ? UIColor.white : UIColor.black}))
-
-                Text("Yea yea (feeat. nelly)")
-                    .padding(.trailing, 20)
-                    .foregroundColor(Color(UIColor{ $0.userInterfaceStyle == .dark ? UIColor.white : UIColor.black}))
-                Image(systemName: "play.fill")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 20.0, height: 20.0)
-                    .foregroundColor(Color(UIColor{ $0.userInterfaceStyle == .dark ? UIColor.white : UIColor.black}))
-                    .padding(10)
-                Image(systemName: "forward.fill")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 30.0, height: 30.0)
-                    .foregroundColor(Color(UIColor{ $0.userInterfaceStyle == .dark ? UIColor.white : UIColor.black}))
-                    .padding(10)
-            }
+        HStack(spacing: 0){
+            Image(systemName: "music.note.tv.fill")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 45.0, height: 45.0)
+                .padding(.trailing, 10)
+                .foregroundColor(Color(UIColor{ $0.userInterfaceStyle == .dark ? UIColor.white : UIColor.black}))
+            
+            Text("Yea yea (feeat. nelly)")
+                .padding(.trailing, 20)
+                .foregroundColor(Color(UIColor{ $0.userInterfaceStyle == .dark ? UIColor.white : UIColor.black}))
+            Image(systemName: "play.fill")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 20.0, height: 20.0)
+                .foregroundColor(Color(UIColor{ $0.userInterfaceStyle == .dark ? UIColor.white : UIColor.black}))
+                .padding(10)
+            Image(systemName: "forward.fill")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 30.0, height: 30.0)
+                .foregroundColor(Color(UIColor{ $0.userInterfaceStyle == .dark ? UIColor.white : UIColor.black}))
+                .padding(10)
         }
-
     }
-    
 }
