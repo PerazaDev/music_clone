@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		280D141E28FB37F8007A3635 /* MusicModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280D141D28FB37F8007A3635 /* MusicModel.swift */; };
 		2831EE9C28BEBADF009A16FB /* music_cloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2831EE9B28BEBADF009A16FB /* music_cloneApp.swift */; };
 		2831EE9E28BEBADF009A16FB /* RouterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2831EE9D28BEBADF009A16FB /* RouterView.swift */; };
 		2831EEA028BEBAE2009A16FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2831EE9F28BEBAE2009A16FB /* Assets.xcassets */; };
@@ -16,10 +17,14 @@
 		2831EEAE28BEDEBE009A16FB /* RadioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2831EEAD28BEDEBE009A16FB /* RadioView.swift */; };
 		2831EEB028BEDECD009A16FB /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2831EEAF28BEDECD009A16FB /* LibraryView.swift */; };
 		2831EEB228BEDEDA009A16FB /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2831EEB128BEDEDA009A16FB /* SearchView.swift */; };
+		286453CB28C03E6000F64F4A /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286453CA28C03E6000F64F4A /* Card.swift */; };
+		286453CD28C03E7200F64F4A /* CardPortrait.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286453CC28C03E7200F64F4A /* CardPortrait.swift */; };
+		286453D028C0408900F64F4A /* CardCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286453CF28C0408900F64F4A /* CardCover.swift */; };
 		28CFC2E828BEEC3000BE6044 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CFC2E728BEEC3000BE6044 /* Common.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		280D141D28FB37F8007A3635 /* MusicModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicModel.swift; sourceTree = "<group>"; };
 		2831EE9828BEBADF009A16FB /* music_clone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = music_clone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2831EE9B28BEBADF009A16FB /* music_cloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = music_cloneApp.swift; sourceTree = "<group>"; };
 		2831EE9D28BEBADF009A16FB /* RouterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterView.swift; sourceTree = "<group>"; };
@@ -30,6 +35,9 @@
 		2831EEAD28BEDEBE009A16FB /* RadioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioView.swift; sourceTree = "<group>"; };
 		2831EEAF28BEDECD009A16FB /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
 		2831EEB128BEDEDA009A16FB /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		286453CA28C03E6000F64F4A /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		286453CC28C03E7200F64F4A /* CardPortrait.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPortrait.swift; sourceTree = "<group>"; };
+		286453CF28C0408900F64F4A /* CardCover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCover.swift; sourceTree = "<group>"; };
 		28CFC2E728BEEC3000BE6044 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -44,6 +52,91 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		280D141B28FB37D6007A3635 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				280D141C28FB37EB007A3635 /* Models */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		280D141C28FB37EB007A3635 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				280D141D28FB37F8007A3635 /* MusicModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		280D141F28FB381A007A3635 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				280D142528FB386B007A3635 /* Search */,
+				280D142428FB3851007A3635 /* Library */,
+				280D142328FB3849007A3635 /* Radio */,
+				280D142228FB383C007A3635 /* ListenNow */,
+				280D142128FB3832007A3635 /* Browse */,
+				280D142028FB3825007A3635 /* Router */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		280D142028FB3825007A3635 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				2831EE9D28BEBADF009A16FB /* RouterView.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		280D142128FB3832007A3635 /* Browse */ = {
+			isa = PBXGroup;
+			children = (
+				2831EEA928BEDE7E009A16FB /* BrowseView.swift */,
+			);
+			path = Browse;
+			sourceTree = "<group>";
+		};
+		280D142228FB383C007A3635 /* ListenNow */ = {
+			isa = PBXGroup;
+			children = (
+				2831EEAB28BEDEA0009A16FB /* ListenNowView.swift */,
+			);
+			path = ListenNow;
+			sourceTree = "<group>";
+		};
+		280D142328FB3849007A3635 /* Radio */ = {
+			isa = PBXGroup;
+			children = (
+				2831EEAD28BEDEBE009A16FB /* RadioView.swift */,
+			);
+			path = Radio;
+			sourceTree = "<group>";
+		};
+		280D142428FB3851007A3635 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				2831EEAF28BEDECD009A16FB /* LibraryView.swift */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		280D142528FB386B007A3635 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				2831EEB128BEDEDA009A16FB /* SearchView.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		280D142628FB3892007A3635 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				2831EE9B28BEBADF009A16FB /* music_cloneApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
 		2831EE8F28BEBADF009A16FB = {
 			isa = PBXGroup;
 			children = (
@@ -63,16 +156,12 @@
 		2831EE9A28BEBADF009A16FB /* music_clone */ = {
 			isa = PBXGroup;
 			children = (
-				2831EE9B28BEBADF009A16FB /* music_cloneApp.swift */,
-				2831EE9D28BEBADF009A16FB /* RouterView.swift */,
-				2831EEA928BEDE7E009A16FB /* BrowseView.swift */,
-				2831EEAB28BEDEA0009A16FB /* ListenNowView.swift */,
-				2831EEAD28BEDEBE009A16FB /* RadioView.swift */,
-				2831EEAF28BEDECD009A16FB /* LibraryView.swift */,
-				2831EEB128BEDEDA009A16FB /* SearchView.swift */,
+				280D142628FB3892007A3635 /* App */,
+				280D141F28FB381A007A3635 /* Presentation */,
+				280D141B28FB37D6007A3635 /* Domain */,
+				286453CE28C03E7700F64F4A /* Common */,
 				2831EE9F28BEBAE2009A16FB /* Assets.xcassets */,
 				2831EEA128BEBAE2009A16FB /* Preview Content */,
-				28CFC2E728BEEC3000BE6044 /* Common.swift */,
 			);
 			path = music_clone;
 			sourceTree = "<group>";
@@ -83,6 +172,17 @@
 				2831EEA228BEBAE2009A16FB /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		286453CE28C03E7700F64F4A /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				28CFC2E728BEEC3000BE6044 /* Common.swift */,
+				286453CA28C03E6000F64F4A /* Card.swift */,
+				286453CC28C03E7200F64F4A /* CardPortrait.swift */,
+				286453CF28C0408900F64F4A /* CardCover.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,10 +256,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				28CFC2E828BEEC3000BE6044 /* Common.swift in Sources */,
+				286453CB28C03E6000F64F4A /* Card.swift in Sources */,
 				2831EEAC28BEDEA0009A16FB /* ListenNowView.swift in Sources */,
 				2831EE9E28BEBADF009A16FB /* RouterView.swift in Sources */,
+				286453D028C0408900F64F4A /* CardCover.swift in Sources */,
+				280D141E28FB37F8007A3635 /* MusicModel.swift in Sources */,
 				2831EEAA28BEDE7E009A16FB /* BrowseView.swift in Sources */,
 				2831EEB228BEDEDA009A16FB /* SearchView.swift in Sources */,
+				286453CD28C03E7200F64F4A /* CardPortrait.swift in Sources */,
 				2831EE9C28BEBADF009A16FB /* music_cloneApp.swift in Sources */,
 				2831EEB028BEDECD009A16FB /* LibraryView.swift in Sources */,
 				2831EEAE28BEDEBE009A16FB /* RadioView.swift in Sources */,
