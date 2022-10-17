@@ -97,7 +97,7 @@ struct GenericButtonTab: View {
         Button { self.typeView = typeButton} label: {
             VStack{
                 Image(systemName: imageSystem)
-                    .font(.title)
+                    .font(.title2)
                 Text(title)
                     .font(.caption)
                     .fontWeight(.medium)
